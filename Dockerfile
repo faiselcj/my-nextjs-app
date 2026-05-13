@@ -6,7 +6,7 @@ WORKDIR /app
 # Copy only package files first (layer caching)
 COPY package*.json ./
 
-RUN npm ci
+RUN apt install npm
 
 # ── Stage 2: Build the app ──────────────────────────────────────
 FROM node:20-alpine AS builder
